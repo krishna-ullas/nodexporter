@@ -1,0 +1,35 @@
+app:
+  name: Node Exporter
+  code: NODEEXPORTER
+  notify: appzdev@cloudbourne.co
+    
+build:
+  version: 0.2
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: nodexporter-0.2
+  image_name: alpha/nodexporter
+    
+deploy:
+  context: alpha/DEV
+  replicas: 1
+
+    
+monitor:
+  notify: appzops@cloudbourne.co      
+    
+properties:
+  AWS_ACCESS_KEY_ID: 
+    vault: AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY:
+    vault: AWS_SECRET_ACCESS_KEY
+  AWS_DEFAULT_REGION: us-east-2
+  KUBECONFIG:
+    vault: KUBECONFIG
+  K8S_PROVIDER: UNMANAGED
+  NAMESPACE: staging-nodexporter
+  APP_INSTANCE_NAME: nodexporter-v1
+  STORAGECLASS_NAME: gp2
+  COMMON_REGISTRY: quincy2019-registry-common.ecloudcontrol.com
+  revision : 43
