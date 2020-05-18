@@ -32,4 +32,4 @@ properties:
   APP_INSTANCE_NAME: nodexporter-v1
   STORAGECLASS_NAME: gp2
   COMMON_REGISTRY: quincy2019-registry-common.ecloudcontrol.com
-  revision : 47
+  revision : 48
