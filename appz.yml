@@ -1,23 +1,22 @@
 app:
   name: Node Exporter
   code: NODEEXPORTER
-  notify: appzdev@cloudbourne.co
+  notify: kullas@ecloudcontrol.com
     
 build:
-  version: 0.2
+  version: 1.8
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: nodexporter-0.2
-  image_name: alpha/nodexporter
+  image_template: nodexporter-1.8
     
 deploy:
-  context: alpha/DEV
+  context: krishna-ullas/DEV
   replicas: 1
 
     
 monitor:
-  notify: appzops@cloudbourne.co      
+  notify: kullas@ecloudcontrol.com    
     
 properties:
   AWS_ACCESS_KEY_ID: 
